@@ -16,38 +16,70 @@ class ServiceProvider extends BaseServiceProvider
     */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/flip.php', 'flip');
-
-        $databasePath = __DIR__.'/../database/migrations';
-        if ($this->isLumen()) {
-            $this->loadMigrationsFrom($databasePath);
-        } else {
-            $this->publishes([$databasePath => database_path('migrations')], 'migrations');
-        }
-
-        if (class_exists(Application::class)) {
-            $this->publishes(
-                [
-                    __DIR__.'/../config/flip.php' => config_path('flip.php'),
-                ],
-                'config'
-            );
-        }
 
 
         if (config('flip.route.enabled')) {
             $this->registerRoutes();
         }
 
+        $this->registerFlipConfig();
+        $this->registerFlipModule();
+        $this->registerFlipController();
+        $this->registerFlipHelper();
+        $this->registerFlipException();
+        $this->registerFlipTraits();
+
+
     }
-
-
     protected function registerRoutes()
     {
         $router = $this->app['router'];
         require __DIR__.'/../routes/web.php';
         require __DIR__.'/../routes/api.php';
+    }
 
+    protected function registerFlipConfig()
+    {
+      $this->mergeConfigFrom(__DIR__.'/../config/flip.php', 'flip');
+      $this->publishes([
+        $this->packagePath(__DIR__.'/../config/flip.php') => base_path('flip.php'),
+      ], 'config');
+    }
+
+
+    protected function registerFlipModule()
+    {
+      $this->publishes([
+        $this->packagePath('Flip/Flip.php') => base_path('app/Flip'),
+      ], 'FlipModule');
+    }
+
+    protected function registerFlipController()
+    {
+      $this->publishes([
+        $this->packagePath('Http/Controllers/SnapController.php') => base_path('app/Http/Controllers'),
+      ], 'Controllers');
+    }
+
+    protected function registerFlipHelper()
+    {
+      $this->publishes([
+        $this->packagePath('Helpers/ResponseHelper.php') => base_path('app/Helpers'),
+      ], 'Helpers');
+    }
+
+    protected function registerFlipException()
+    {
+      $this->publishes([
+        $this->packagePath('Exceptions/FlipException.php') => base_path('app/Exceptions'),
+      ], 'Exceptions');
+    }
+
+    protected function registerFlipTraits()
+    {
+      $this->publishes([
+        $this->packagePath('Traits/ChannelLogging.php') => base_path('app/Traits'),
+      ], 'Traits');
     }
 
     protected function isLaravel()

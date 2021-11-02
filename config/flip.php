@@ -5,7 +5,7 @@ return [
   'production' => env('FLIP_PRODUCTION', false),
   'idempotency-key' => env('IDEMPOTENCY_KEY', 'SET_DEFAULT_FLIP_IDEMPOTENCY_KEY_PROD'),
   'route' => [
-      'enabled' => false,
+      'enabled' => true,
       'middleware' => ['web', 'auth'],
       'prefix' => 'flip',
   ],
