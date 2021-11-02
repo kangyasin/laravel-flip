@@ -34,15 +34,15 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerRoutes()
     {
         $router = $this->app['router'];
-        require 'routes/web.php';
-        require 'routes/api.php';
+        require __DIR__.'/../routes/web.php';
+        require __DIR__.'/../routes/api.php';
     }
 
     protected function registerFlipConfig()
     {
       $this->mergeConfigFrom('config/flip.php', 'flip');
       $this->publishes([
-        $this->packagePath('config/flip.php') => base_path('flip.php'),
+          __DIR__.'/../config/flip.php' => base_path('flip.php'),
       ], 'config');
     }
 
