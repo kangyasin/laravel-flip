@@ -41,7 +41,7 @@
             "Kangyasin\\LaravelFlip\\ServiceProvider"
         ],
         "aliases": {
-            "Indonesia": "Kangyasin\\LaravelFlip\\Facade"
+            "LaravelFlip": "Kangyasin\\LaravelFlip\\Facade"
         }
     }
 }
