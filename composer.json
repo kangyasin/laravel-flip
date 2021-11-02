@@ -16,9 +16,7 @@
   },
   "autoload": {
       "psr-4": {
-        "Kangyasin\\LaravelFlip\\": "src/",
-        "Kangyasin\\LaravelFlip\\Helpers\\": "src/Helpers",
-        "Kangyasin\\LaravelFlip\\Flip\\": "src/Flip"
+        "Kangyasin\\LaravelFlip\\": "src/"
       }
   },
   "autoload-dev": {
