@@ -21,7 +21,7 @@
   },
   "autoload": {
       "classmap": [
-          "src/migrations"
+          "src/Kangyasin/LaravelFlip/database/migrations"
       ],
       "psr-0": {
           "Kangyasin\\LaravelFlip": "src/"
