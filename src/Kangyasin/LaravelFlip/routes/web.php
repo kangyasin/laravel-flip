@@ -1,6 +1,10 @@
 <?php
 
-Route::group(['namespace' => 'Kangyasin\LaravelFlip\Http\Controllers', 'prefix' => 'flip'], function () {
+Route::group([
+  'namespace' => 'Kangyasin\LaravelFlip\Http\Controllers',
+  'prefix' => config('flip.route.prefix'),
+  'middleware' => config('flip.route.middleware'),
+], function () {
     Route::post('bank/inquiry', 'SnapController@bank_inquiry')->name('bank_inquiry');
     Route::post('bank/disbursement', 'SnapController@bank_disbursement')->name('bank_disbursement');
     Route::get('balance', 'SnapController@balance')->name('balance');
