@@ -16,9 +16,9 @@ class ServiceProvider extends BaseServiceProvider
     */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/flip.php', 'flip');
+        $this->mergeConfigFrom(__DIR__.'/Kangyasin/LaravelFlip/config/flip.php', 'flip');
 
-        $databasePath = __DIR__.'/../database/migrations';
+        $databasePath = __DIR__.'/Kangyasin/LaravelFlip/database/migrations';
         if ($this->isLumen()) {
             $this->loadMigrationsFrom($databasePath);
         } else {
@@ -28,7 +28,7 @@ class ServiceProvider extends BaseServiceProvider
         if (class_exists(Application::class)) {
             $this->publishes(
                 [
-                    __DIR__.'/../config/flip.php' => config_path('flip.php'),
+                    __DIR__.'/Kangyasin/LaravelFlip/config/flip.php' => config_path('flip.php'),
                 ],
                 'config'
             );
@@ -45,8 +45,8 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerRoutes()
     {
         $router = $this->app['router'];
-        require __DIR__.'/../routes/web.php';
-        require __DIR__.'/../routes/api.php';
+        require __DIR__.'/Kangyasin/LaravelFlip/routes/web.php';
+        require __DIR__.'/Kangyasin/LaravelFlip/routes/api.php';
 
     }
 
