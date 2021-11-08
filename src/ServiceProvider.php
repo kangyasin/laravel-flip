@@ -40,7 +40,7 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function registerFlipConfig()
     {
-      $this->mergeConfigFrom('config/flip.php', 'flip');
+      // $this->mergeConfigFrom('config/flip.php', 'flip');
       $this->publishes([
           __DIR__.'/../config/flip.php' => base_path('flip.php'),
       ], 'config');
