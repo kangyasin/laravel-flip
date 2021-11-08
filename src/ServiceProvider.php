@@ -49,8 +49,13 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function registerFlipModule()
     {
+
+      if(!is_dir(__DIR__.'/Flip')) {
+        mkdir(__DIR__.'/Flip', 0755, true);
+      }
+
       $this->publishes([
-        __DIR__.'/Flip/Flip.php' => app_path('Flip/Flip.php'),
+        __DIR__.'/Flip/Flip.php' => app_path('Flip'),
       ], 'Flip');
     }
 
