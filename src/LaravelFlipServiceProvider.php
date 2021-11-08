@@ -5,10 +5,10 @@ namespace Kangyasin\LaravelFlip;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Arr;
-use Illuminate\Support\ServiceProvider as BaseServiceProvider;
+use Illuminate\Support\LaravelFlipServiceProvider as BaseServiceProvider;
 use Illuminate\Support\Str;
 
-class ServiceProvider extends BaseServiceProvider
+class LaravelFlipServiceProvider extends BaseServiceProvider
 {
 
     /*
@@ -50,12 +50,12 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerFlipModule()
     {
 
-      if(!is_dir(__DIR__.'/Flip')) {
+      // if(!is_dir(__DIR__.'/Flip')) {
         mkdir(__DIR__.'/Flip', 0755, true);
-      }
+      // }
 
       $this->publishes([
-        __DIR__.'/Flip/Flip.php' => app_path('Flip'),
+        __DIR__.'/Flip/Flip.php' => app_path('Flip/Flip.php'),
       ], 'Flip');
     }
 

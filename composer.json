@@ -39,7 +39,7 @@
       },
       "laravel": {
           "providers": [
-            "Kangyasin\\LaravelFlip\\ServiceProvider"
+            "Kangyasin\\LaravelFlip\\LaravelFlipServiceProvider"
           ],
           "aliases": {
               "LaravelFlip": "Kangyasin\\LaravelFlip\\Facade"
