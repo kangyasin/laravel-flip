@@ -24,10 +24,10 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->registerFlipConfig();
         $this->registerFlipModule();
-        // $this->registerFlipController();
-        // $this->registerFlipHelper();
-        // $this->registerFlipException();
-        // $this->registerFlipTraits();
+        $this->registerFlipController();
+        $this->registerFlipHelper();
+        $this->registerFlipException();
+        $this->registerFlipTraits();
 
 
     }
@@ -50,8 +50,8 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerFlipModule()
     {
       $this->publishes([
-        __DIR__.'/Flip/Flip.php' => app_path('Flip'),
-      ], 'Flip/Flip');
+        __DIR__.'/Flip/Flip.php' => app_path('Flip/Flip.php'),
+      ], 'Flip');
     }
 
     protected function registerFlipController()
