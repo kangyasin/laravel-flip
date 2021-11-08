@@ -40,7 +40,6 @@ class LaravelFlipServiceProvider extends ServiceProvider
 
     protected function registerFlipConfig()
     {
-      // $this->mergeConfigFrom('config/flip.php', 'flip');
       $this->publishes([
           __DIR__.'/../config/flip.php' => config_path('flip.php'),
       ], 'config');
@@ -49,11 +48,6 @@ class LaravelFlipServiceProvider extends ServiceProvider
 
     protected function registerFlipModule()
     {
-
-      // if(!is_dir(__DIR__.'/Flip')) {
-        mkdir(__DIR__.'/Flip', 0755, true);
-      // }
-
       $this->publishes([
         __DIR__.'/Flip/Flip.php' => app_path('Flip/Flip.php'),
       ], 'Flip');
@@ -62,28 +56,28 @@ class LaravelFlipServiceProvider extends ServiceProvider
     protected function registerFlipController()
     {
       $this->publishes([
-        __DIR__.'/Http/Controllers/SnapController.php' => app_path('Http/Controllers'),
+        __DIR__.'/Http/Controllers/SnapController.php' => app_path('Http/Controllers/SnapController.php'),
       ], 'Controllers');
     }
 
     protected function registerFlipHelper()
     {
       $this->publishes([
-        __DIR__.'/Helpers/ResponseHelper.php' => app_path('Helpers'),
+        __DIR__.'/Helpers/ResponseHelper.php' => app_path('Helpers/ResponseHelper.php'),
       ], 'Helpers');
     }
 
     protected function registerFlipException()
     {
       $this->publishes([
-        __DIR__.'/Exceptions/FlipException.php' => app_path('Exceptions'),
+        __DIR__.'/Exceptions/FlipException.php' => app_path('Exceptions/FlipException.php'),
       ], 'Exceptions');
     }
 
     protected function registerFlipTraits()
     {
       $this->publishes([
-        __DIR__.'/Traits/ChannelLogging.php' => app_path('Traits'),
+        __DIR__.'/Traits/ChannelLogging.php' => app_path('Traits/ChannelLogging.php'),
       ], 'Traits');
     }
 
