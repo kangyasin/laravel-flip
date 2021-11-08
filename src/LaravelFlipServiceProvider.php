@@ -5,10 +5,10 @@ namespace Kangyasin\LaravelFlip;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Arr;
-use Illuminate\Support\LaravelFlipServiceProvider as BaseServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
-class LaravelFlipServiceProvider extends BaseServiceProvider
+class LaravelFlipServiceProvider extends ServiceProvider
 {
 
     /*
