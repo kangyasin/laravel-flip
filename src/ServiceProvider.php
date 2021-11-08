@@ -51,7 +51,7 @@ class ServiceProvider extends BaseServiceProvider
     {
       $this->publishes([
         __DIR__.'/Flip/Flip.php' => app_path('Flip'),
-      ], 'Flip');
+      ], 'Flip/Flip');
     }
 
     protected function registerFlipController()
