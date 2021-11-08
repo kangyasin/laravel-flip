@@ -29,19 +29,14 @@ Found this package helpful ? Please consider supporting my work!
 
 | Laravel | PHP | Package |
 |---|---|---|
-| ^8.0 | ^8.0 | ^1.0 |
+| ^8.0 | ^8.0 | ^2.15 |
+| ^7.0 | ^7.4 | ^2.15 |
 
 ## Usage example
-
-Just call the components you need in your views and let this package take care of the HTML generation time-consuming part.
 
 ```php
 LaravelFlip::bankInquiry();
 ```
-
-And get these components displayed:
-
-![Laravel Form Components screenshot](/docs/screenshot.png)
 
 ## Table of Contents
 
@@ -60,7 +55,6 @@ And get these components displayed:
   * [Create Disbursement v3](#create-disbursement-v3)
   * [Get All Disbursement v3](#get-all-disbursement-v3)
   * [Get Disbursement by Idempotency Key v3](#get-disbursement-by-idempotency-key-v3)
-  
 * [Testing](#testing)
 * [Changelog](#changelog)
 * [Contributing](#contributing)
@@ -125,7 +119,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Arthur LORENT](https://github.com/Okipa)
+- [Kang Yasin](https://github.com/kangyasin)
 - [All Contributors](../../contributors)
 
 ## License
