@@ -24,10 +24,10 @@ class ServiceProvider extends BaseServiceProvider
 
         $this->registerFlipConfig();
         $this->registerFlipModule();
-        $this->registerFlipController();
-        $this->registerFlipHelper();
-        $this->registerFlipException();
-        $this->registerFlipTraits();
+        // $this->registerFlipController();
+        // $this->registerFlipHelper();
+        // $this->registerFlipException();
+        // $this->registerFlipTraits();
 
 
     }
@@ -40,7 +40,7 @@ class ServiceProvider extends BaseServiceProvider
 
     protected function registerFlipConfig()
     {
-      //$this->mergeConfigFrom('config/flip.php', 'flip');
+      $this->mergeConfigFrom('config/flip.php', 'flip');
       $this->publishes([
           __DIR__.'/../config/flip.php' => base_path('flip.php'),
       ], 'config');
@@ -50,35 +50,35 @@ class ServiceProvider extends BaseServiceProvider
     protected function registerFlipModule()
     {
       $this->publishes([
-        __DIR__.'/Flip/Flip.php' => base_path('app/Flip/'),
+        __DIR__.'/Flip/Flip.php' => base_path('app/Flip'),
       ], 'FlipModule');
     }
 
     protected function registerFlipController()
     {
       $this->publishes([
-        __DIR__.'/Http/Controllers/SnapController.php' => base_path('app/Http/Controllers/'),
+        __DIR__.'/Http/Controllers/SnapController.php' => base_path('app/Http/Controllers'),
       ], 'Controllers');
     }
 
     protected function registerFlipHelper()
     {
       $this->publishes([
-        __DIR__.'/Helpers/ResponseHelper.php' => base_path('app/Helpers/'),
+        __DIR__.'/Helpers/ResponseHelper.php' => base_path('app/Helpers'),
       ], 'Helpers');
     }
 
     protected function registerFlipException()
     {
       $this->publishes([
-        __DIR__.'/Exceptions/FlipException.php' => base_path('app/Exceptions/'),
+        __DIR__.'/Exceptions/FlipException.php' => base_path('app/Exceptions'),
       ], 'Exceptions');
     }
 
     protected function registerFlipTraits()
     {
       $this->publishes([
-        __DIR__.'/Traits/ChannelLogging.php' => base_path('app/Traits/'),
+        __DIR__.'/Traits/ChannelLogging.php' => base_path('app/Traits'),
       ], 'Traits');
     }
 
