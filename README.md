@@ -17,18 +17,13 @@
     </a>
 </p>
 
-**PACKAGE IN BETA-TEST**  
+**PACKAGE IN BETA-TEST : UNOFFICIAL FLIP**  
 
-Save time and take advantage of a set of dynamical, ready-to-use and fully customizable form components.
+Save time and take advantage of a set of dynamical, ready-to-use.
+Found this package helpful ? Please consider supporting my work!
 
-Components are Livewire compatible and can be used with the following UI frameworks:
-* Bootstrap 5
-* TailwindCSS 2 (upcoming feature)
-
-Found this package helpful? Please consider supporting my work!
-
-[![Donate](https://img.shields.io/badge/Buy_me_a-Ko--fi-ff5f5f.svg)](https://ko-fi.com/arthurlorent)
-[![Donate](https://img.shields.io/badge/Donate_on-PayPal-green.svg)](https://paypal.me/arthurlorent)
+[![Donate](https://img.shields.io/badge/Buy_me_a-Ko--fi-ff5f5f.svg)](https://ko-fi.com/kangyasin)
+[![Donate](https://img.shields.io/badge/Donate_on-PayPal-green.svg)](https://paypal.me/kangyasin)
 
 ## Compatibility
 
@@ -40,24 +35,8 @@ Found this package helpful? Please consider supporting my work!
 
 Just call the components you need in your views and let this package take care of the HTML generation time-consuming part.
 
-```blade
-<x-form::form class="row" method="PUT" :action="route('user.update', $user)" :bind="$user">
-    <div class="col-md-6">
-        <x-form::input name="name"/>
-        <x-form::input type="email" name="email"/>
-        <x-form::textarea name="biography" :locales="['fr', 'en']"/>
-    </div>
-    <div class="col-md-6">
-        <x-form::select name="hobbies" :options="[1 => 'Sport', 2 => 'Cinema', 3 => 'Literature', 4 => 'Travel']" caption="Select your favorite hobbies." multiple/>
-        <x-form::checkbox name="technologies" :group="[1 => 'Laravel', 2 => 'Bootstrap', 3 => 'Tailwind', 4 => 'Livewire']" inline/>
-        <x-form::radio name="gender" :group="[1 => 'Male', 2 => 'Female']" inline/>
-        <x-form::toggle-switch name="active"/>
-    </div>
-    <div class="col-12 mt-2">
-        <x-form::button.link class="btn-secondary me-3">{{ __('Cancel') }}</x-form::button.link>
-        <x-form::button.submit/>
-    </div>
-</x-form:form>
+```php
+LaravelFlip::bankInquiry();
 ```
 
 And get these components displayed:
@@ -69,7 +48,19 @@ And get these components displayed:
 * [Installation](#installation)
 * [Configuration](#configuration)
 * [Transaction](#transaction)
-  * [Get Bank Support](#GetBankSupport)
+  * [Get Bank Support](#get-bank-support)
+  * [Get City](#get-city)
+  * [Get Country](#get-country)
+  * [Get City and Country](#get-city-and-country)
+  * [Request Bank Inquiry](#request-bank-inquiry)
+  * [Idempotent Request](#idempotent-request)
+  * [Create Disbursement v2](#create-disbursement-v2)
+  * [Get All Disbursement v2](#get-all-disbursement-v2)
+  * [Get Disbursement v2](#get-disbursement-v2)
+  * [Create Disbursement v3](#create-disbursement-v3)
+  * [Get All Disbursement v3](#get-all-disbursement-v3)
+  * [Get Disbursement by Idempotency Key v3](#get-disbursement-by-idempotency-key-v3)
+  
 * [Testing](#testing)
 * [Changelog](#changelog)
 * [Contributing](#contributing)
