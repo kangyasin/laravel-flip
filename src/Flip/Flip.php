@@ -1,7 +1,7 @@
 <?php
 
 namespace Kangyasin\LaravelFlip\Flip;
-use  Kangyasin\LaravelFlip\Exceptions\FlipException as Exception;
+use Kangyasin\LaravelFlip\Exceptions\FlipException as Exception;
 
 class Flip
 {
